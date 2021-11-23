@@ -37,16 +37,16 @@ def mov():
         vel_msg.angular.z = 0.75
         velocity_publisher.publish(vel_msg)
 
-        # if t > -0.1 and t < 0:  # stopping the turtle
-        #     vel_msg.linear.x = 0
-        #     vel_msg.linear.z = 0
-        #     vel_msg.linear.y = 0
-        #     vel_msg.angular.x = 0
-        #     vel_msg.angular.y = 0
-        #     vel_msg.angular.z = 0
-        #     velocity_publisher.publish(vel_msg)
-        #     print("stopping turtle")
-        #     break
+        if t > -0.1 and t < 0:  # stopping the turtle
+            vel_msg.linear.x = 0
+            vel_msg.linear.z = 0
+            vel_msg.linear.y = 0
+            vel_msg.angular.x = 0
+            vel_msg.angular.y = 0
+            vel_msg.angular.z = 0
+            velocity_publisher.publish(vel_msg)
+            print("stopping turtle")
+            break
 
         rate.sleep()
 
